@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Join TechBlog | Sign Up</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/signup.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="container">
+        <a href="index.html" class="logo">TechBlog</a>
+        <div class="nav-right">
+          <ul class="nav-links" id="primary-navigation" data-visible="false">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="categories.html">Categories</a></li>
+            <li><a href="about.html">About</a></li>
+            <li>
+              <a href="signup.html" class="active" id="signup-link">Signup</a>
+            </li>
+            <li><a href="login.html" id="auth-link">Login</a></li>
+          </ul>
+          <button class="theme-toggle" aria-label="Toggle dark mode">
+            <i class="fas fa-moon"></i>
+          </button>
+          <button id="profile-icon-btn" aria-label="User Profile" title="User Profile" class="profile-icon-btn" style="margin-left: 1rem;">
+            <i class="fas fa-user-alt"></i>
+          </button>
+          <button
+            class="nav-toggle"
+            aria-label="Toggle navigation"
+            aria-expanded="false"
+            aria-controls="primary-navigation"
+          >
+            <span class="hamburger"></span>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <main class="container">
+      <div class="signup-container">
+        <div class="signup-header">
+          <h2>Join TechBlog</h2>
+          <p>Create your account to unlock all features</p>
+        </div>
+
+        <div class="social-signup">
+          <button class="social-btn google-btn">
+            <i class="fab fa-google"></i> Sign up with Google
+          </button>
+          <button class="social-btn github-btn">
+            <i class="fab fa-github"></i> Sign up with GitHub
+          </button>
+        </div>
+
+        <div class="divider">
+          <span>or</span>
+        </div>
+
+        <form class="signup-form" id="signupForm">
+          <div class="form-group">
+            <label for="username">Username</label>
+            <div class="input-with-icon">
+              <i class="fas fa-user"></i>
+              <input
+                type="text"
+                id="username"
+                name="username"
+                placeholder="Enter your username"
+                required
+                minlength="3"
+                maxlength="20"
+              />
+            </div>
+            <div class="input-hint">
+              3-20 characters, letters and numbers only
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <div class="input-with-icon">
+              <i class="fas fa-envelope"></i>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Enter your email"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="password">Password</label>
+            <div class="input-with-icon">
+              <i class="fas fa-lock"></i>
+              <input
+                type="password"
+                id="password"
+                name="password"
+                placeholder="Create a password"
+                required
+                minlength="8"
+              />
+              <button
+                type="button"
+                class="toggle-password"
+                aria-label="Show password"
+              >
+                <i class="fas fa-eye"></i>
+              </button>
+            </div>
+            <div class="password-strength">
+              <div class="strength-meter">
+                <span class="strength-bar"></span>
+                <span class="strength-bar"></span>
+                <span class="strength-bar"></span>
+                <span class="strength-bar"></span>
+              </div>
+              <div class="strength-text">
+                Password strength: <span>Weak</span>
+              </div>
+            </div>
+            <div class="input-hint">
+              Minimum 8 characters with at least one number and symbol
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="confirm-password">Confirm Password</label>
+            <div class="input-with-icon">
+              <i class="fas fa-lock"></i>
+              <input
+                type="password"
+                id="confirm-password"
+                name="confirm-password"
+                placeholder="Confirm your password"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="form-group terms-group">
+            <input type="checkbox" id="terms" name="terms" required />
+            <label for="terms"
+              >I agree to the <a href="#">Terms of Service</a> and
+              <a href="#">Privacy Policy</a></label
+            >
+          </div>
+
+          <button type="submit" class="signup-btn">
+            <span class="btn-text">Create Account</span>
+            <span class="btn-loader hidden">
+              <i class="fas fa-spinner fa-spin"></i>
+            </span>
+          </button>
+
+          <div class="login-link">
+            Already have an account? <a href="login.html">Log in</a>
+          </div>
+        </form>
+      </div>
+    </main>
+   
+
+    <script type="module" src="js/app.js"></script>
+    <script type="module" src="js/signup.js"></script>
+  </body>
+</html>

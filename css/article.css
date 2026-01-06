@@ -1,0 +1,58 @@
+.article-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.article-card {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s ease forwards;
+  animation-delay: calc(0.2s * var(--i));
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.article-image {
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 6px 6px 0 0;
+}
+
+.article-content {
+  background: var(--card-bg);
+  padding: 1rem;
+  border-radius: 0 0 6px 6px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.article-card:hover .article-content {
+  transform: translateY(-5px);
+}
+
+.read-more {
+  margin-top: 1rem;
+  background: var(--secondary-color);
+  border: none;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.read-more:hover {
+  background: var(--primary-color);
+}

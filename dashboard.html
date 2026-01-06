@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Dashboard - TechBlog</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/dashboard.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+        <div class="container">
+            <a href="index.html" class="logo" aria-label="TechBlog Home">TechBlog</a>
+            <div class="nav-right">
+                <ul class="nav-links" id="primary-navigation" data-visible="false">
+                    <li><a href="#" id="auth-link">Logout</a></li>
+                </ul>
+                <button class="theme-toggle" aria-label="Toggle dark mode" title="Toggle Light/Dark Theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button id="profile-icon-btn" aria-label="User Profile" title="User Profile" class="profile-icon-btn active">
+                    <i class="fas fa-user-alt"></i>
+                </button>
+                <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="primary-navigation">
+                    <span class="hamburger"></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container dashboard-container" role="main">
+        <section class="user-profile">
+            <div class="profile-header">
+                <div class="avatar" id="user-avatar">U</div>
+                <div class="profile-info">
+                    <h1>Welcome, <span id="username">User</span></h1>
+                    <p class="profile-status"><i class="fas fa-circle status-active"></i> Active now</p>
+                </div>
+            </div>
+            
+            <div class="profile-details">
+                <div class="detail-card">
+                    <h3><i class="fas fa-user-circle"></i> Account Information</h3>
+                    <p><strong><i class="fas fa-envelope"></i> Email:</strong> <span id="user-email">user@example.com</span></p>
+                    <p><strong><i class="fas fa-calendar-alt"></i> Joined:</strong> <span id="join-date">January 1, 2023</span></p>
+                </div>
+                
+                <div class="detail-card">
+                    <h3><i class="fas fa-chart-line"></i> Blog Activity</h3>
+                    <p><strong><i class="fas fa-file-alt"></i> Posts Published:</strong> <span id="post-count">0</span></p>
+                    <p><strong><i class="fas fa-comments"></i> Comments:</strong> <span id="comment-count">0</span></p>
+                </div>
+            </div>
+        </section>
+
+        <section class="dashboard-sections">
+            <div class="dashboard-section quick-actions">
+                <h2><i class="fas fa-bolt"></i> Quick Actions</h2>
+                <div class="action-buttons">
+                    <button class="btn btn-primary" id="new-post-btn">
+                        <i class="fas fa-plus"></i> Create New Post
+                    </button>
+                    <button class="btn btn-secondary" id="edit-profile-btn">
+                        <i class="fas fa-user-edit"></i> Edit Profile
+                    </button>
+                    <button class="btn btn-secondary" id="change-password-btn">
+                        <i class="fas fa-key"></i> Change Password
+                    </button>
+                </div>
+            </div>
+
+            <div class="dashboard-section quick-navigation">
+                <h2><i class="fas fa-compass"></i> Site Navigation</h2>
+                <div class="navigation-cards">
+                    <a href="index.html" class="nav-card">
+                        <i class="fas fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                    <a href="categories.html" class="nav-card">
+                        <i class="fas fa-tags"></i>
+                        <span>Categories</span>
+                    </a>
+                    <a href="about.html" class="nav-card">
+                        <i class="fas fa-info-circle"></i>
+                        <span>About</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="recent-posts">
+            <div class="section-header">
+                <h2><i class="fas fa-file-alt"></i> Your Recent Posts</h2>
+                <a href="#" class="view-all">View All <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="posts-list" id="posts-list">
+                <div class="no-posts">
+                    <i class="fas fa-file-alt no-posts-icon"></i>
+                    <h3>No Posts Yet</h3>
+                    <p>You haven't published any posts yet. Start sharing your thoughts!</p>
+                    <button class="btn btn-primary">
+                        <i class="fas fa-plus"></i> Create Your First Post
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script type="module">
+        import { AuthManager } from './js/AuthManager.js';
+        import { ThemeManager } from './js/themeManager.js';
+
+        // Initialize AuthManager and ThemeManager
+        const authManager = new AuthManager();
+        const themeManager = new ThemeManager();
+
+        // Load dashboard specific functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check authentication
+            if (!authManager.isLoggedIn()) {
+                window.location.href = 'index.html';
+                return;
+            }
+
+            // Load user data
+            loadUserData();
+            
+            // Set up event listeners
+            document.getElementById('new-post-btn').addEventListener('click', function() {
+                // In a real implementation, this would redirect to new post page
+                window.location.href = 'new-post.html';
+            });
+
+            document.getElementById('edit-profile-btn').addEventListener('click', function() {
+                // In a real implementation, this would redirect to edit profile page
+                window.location.href = 'edit-profile.html';
+            });
+
+            document.getElementById('change-password-btn').addEventListener('click', function() {
+                // In a real implementation, this would redirect to change password page
+                window.location.href = 'change-password.html';
+            });
+        });
+
+        function loadUserData() {
+            // Get user data from AuthManager
+            const authManager = new AuthManager();
+            const userData = authManager.getUserData();
+
+            if (!userData) {
+                // If no user data, redirect to login
+                window.location.href = 'login.html';
+                return;
+            }
+
+            // Set current login date/time as join date
+            const now = new Date();
+            const options = { year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit' };
+            const joinDateStr = now.toLocaleString('en-US', options);
+
+            // Update the UI with user data
+            document.getElementById('username').textContent = userData.username || 'User';
+            document.getElementById('user-email').textContent = userData.email || 'user@example.com';
+            document.getElementById('join-date').textContent = joinDateStr;
+            document.getElementById('post-count').textContent = userData.postCount || 0;
+            document.getElementById('comment-count').textContent = userData.commentCount || 0;
+
+            // Set avatar initial
+            if (userData.username) {
+                document.getElementById('user-avatar').textContent = userData.username.charAt(0).toUpperCase();
+            }
+        }
+    </script>
+</body>
+</html>

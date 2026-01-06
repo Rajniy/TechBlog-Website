@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>About | TechBlog</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/about.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+      <div class="container">
+        <a href="index.html" class="logo" aria-label="TechBlog Home"
+          >TechBlog</a
+        >
+        <div class="nav-right">
+          <ul class="nav-links" id="primary-navigation" data-visible="false">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="categories.html">Categories</a></li>
+            <li>
+              <a href="about.html" class="active" aria-current="page">About</a>
+            </li>
+            <li><a href="signup.html" id="signup-link">Signup</a></li>
+            <li><a href="login.html" id="auth-link">Login</a></li>
+          </ul>
+          <button class="theme-toggle" aria-label="Toggle dark mode">
+            <i class="fas fa-moon"></i>
+          </button>
+          <button
+            id="profile-icon-btn"
+            aria-label="User Profile"
+            title="User Profile"
+            class="profile-icon-btn"
+            style="margin-left: 1rem"
+          >
+            <i class="fas fa-user-alt"></i>
+          </button>
+          <button
+            class="nav-toggle"
+            aria-label="Toggle navigation"
+            aria-expanded="false"
+            aria-controls="primary-navigation"
+          >
+            <span class="hamburger"></span>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <main class="container about-content" role="main">
+      <h1>About TechBlog</h1>
+      <p>
+        Welcome to TechBlog, your go-to source for the latest trends, insights,
+        and tutorials in technology. Our mission is to empower readers with
+        up-to-date information on web development, artificial intelligence,
+        graphic design, and more.
+      </p>
+      <p>
+        We strive to provide high-quality, well-researched articles that help
+        both beginners and professionals stay ahead in the fast-evolving tech
+        world.
+      </p>
+      <p>
+        Our team of passionate writers and industry experts work tirelessly to
+        bring you engaging content that inspires innovation and learning.
+      </p>
+      <h2>What We Offer</h2>
+      <ul>
+        <li>In-depth articles and tutorials on cutting-edge technologies</li>
+        <li>Expert opinions and industry news</li>
+        <li>Community engagement through comments and discussions</li>
+        <li>Resources and guides for continuous learning</li>
+      </ul>
+      <h2>Contact Us</h2>
+      <p>
+        If you have any questions, suggestions, or would like to contribute,
+        feel free to reach out to us at
+        <a href="mailto:contact@techblog.com">contact@techblog.com</a>.
+      </p>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <p>&copy; 2024 TechBlog. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script type="module" src="js/app.js"></script>
+  </body>
+</html>

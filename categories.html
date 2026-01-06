@@ -1,0 +1,117 @@
+<!-- ✅ Updated Full categories.html -->
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Explore categories of articles on technology, web development, AI, and design at TechBlog." />
+  <meta name="keywords" content="technology, categories, web development, AI, design, tutorials" />
+  <meta name="author" content="TechBlog Team" />
+  <title>Categories | TechBlog</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/categories.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <a href="index.html" class="logo" aria-label="TechBlog Home">TechBlog</a>
+      <div class="nav-right">
+        <ul class="nav-links" id="primary-navigation" data-visible="false">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="categories.html" class="active" aria-current="page">Categories</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="signup.html" id="signup-link">Signup</a></li>
+          <li><a href="login.html" id="auth-link">Login</a></li>
+        </ul>
+        <button class="theme-toggle" aria-label="Toggle dark mode">
+          <i class="fas fa-moon"></i>
+        </button>
+        <button id="profile-icon-btn" aria-label="User Profile" title="User Profile" class="profile-icon-btn" style="margin-left: 1rem;">
+          <i class="fas fa-user-alt"></i>
+        </button>
+        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="primary-navigation">
+          <span class="hamburger"></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container" role="main">
+    <section class="category-section">
+      <h2 class="section-title">Browse Categories</h2>
+      <div class="categories-grid">
+        <a href="#" class="category-card" style="background-image: url('./images/web-development.jpg')">
+          <div class="category-content">
+            <h3>Web Development</h3>
+            <p>50+ Articles</p>
+          </div>
+        </a>
+        <a href="#" class="category-card" style="background-image: url('./images/ai.jpg')">
+          <div class="category-content">
+            <h3>Artificial Intelligence</h3>
+            <p>35+ Articles</p>
+          </div>
+        </a>
+        <a href="#" class="category-card" style="background-image: url('./images/graphic-design.jpg')">
+          <div class="category-content">
+            <h3>Graphic Design</h3>
+            <p>28+ Articles</p>
+          </div>
+        </a>
+        <a href="#" class="category-card" style="background-image: url('./images/cybersecurity.jpg')">
+          <div class="category-content">
+            <h3>Cybersecurity</h3>
+            <p>42+ Articles</p>
+          </div>
+        </a>
+        <a href="#" class="category-card" style="background-image: url('./images/cloud-computing.jpg')">
+          <div class="category-content">
+            <h3>Cloud Computing</h3>
+            <p>30+ Articles</p>
+          </div>
+        </a>
+        <a href="#" class="category-card" style="background-image: url('./images/data-science.jpg')">
+          <div class="category-content">
+            <h3>Data Science</h3>
+            <p>25+ Articles</p>
+          </div>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>TechBlog</h3>
+          <p>Your source for technology insights and tutorials.</p>
+        </div>
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="categories.html">Categories</a></li>
+            <li><a href="about.html">About</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Connect</h3>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>&copy; 2024 TechBlog. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

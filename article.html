@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Read detailed articles on technology, web development, AI, and design at TechBlog."
+    />
+    <meta
+      name="keywords"
+      content="technology, articles, web development, AI, design, tutorials"
+    />
+    <meta name="author" content="TechBlog Team" />
+    <title>Article | TechBlog</title>
+    <link rel="stylesheet" href="css/article.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+      <div class="container">
+        <a href="index.html" class="logo" aria-label="TechBlog Home"
+          >TechBlog</a
+        >
+        <div class="nav-right">
+          <ul class="nav-links" id="primary-navigation" data-visible="false">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="categories.html">Categories</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="signup.html" id="signup-link">Signup</a></li>
+            <li><a href="login.html" id="auth-link">Login</a></li>
+          </ul>
+          <button class="theme-toggle" aria-label="Toggle dark mode">
+            <i class="fas fa-moon"></i>
+          </button>
+          <button id="profile-icon-btn" aria-label="User Profile" title="User Profile" class="profile-icon-btn" style="margin-left: 1rem;">
+            <i class="fas fa-user-alt"></i>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <main class="container" role="main">
+      <article
+        id="articleContent"
+        class="article-full"
+        aria-live="polite"
+        aria-label="Article content"
+      >
+        <!-- Content populated by JavaScript -->
+      </article>
+
+      <section class="comments-section" aria-label="Comments section">
+        <h2>Comments</h2>
+        <form
+          id="commentForm"
+          class="comment-form"
+          aria-label="Add a comment form"
+        >
+          <div class="form-group">
+            <input
+              type="text"
+              id="name"
+              placeholder="Your Name"
+              required
+              aria-required="true"
+            />
+          </div>
+          <div class="form-group">
+            <textarea
+              id="comment"
+              placeholder="Write your comment..."
+              required
+              aria-required="true"
+            ></textarea>
+          </div>
+          <button type="submit" class="btn-primary">Post Comment</button>
+        </form>
+        <div
+          id="comments"
+          class="comments-list"
+          aria-live="polite"
+          aria-label="User comments"
+        >
+          <!-- Comments loaded dynamically -->
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="js/app.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>

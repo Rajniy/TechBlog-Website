@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="TechBlog - Your source for latest technology trends, articles, and tutorials."
+    />
+    <meta
+      name="keywords"
+      content="technology, blog, web development, AI, graphic design, tutorials"
+    />
+    <meta name="author" content="TechBlog Team" />
+    <title>Tech Blog | Home</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+      <div class="container">
+        <a href="index.html" class="logo" aria-label="TechBlog Home"
+          >TechBlog</a
+        >
+        <div class="nav-right">
+          <ul class="nav-links" id="primary-navigation" data-visible="false">
+            <li>
+              <a href="index.html" class="active" aria-current="page">Home</a>
+            </li>
+            <li><a href="categories.html">Categories</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="signup.html" id="signup-link">Signup</a></li>
+            <li><a href="login.html" id="auth-link">Login</a></li>
+          </ul>
+          <button class="theme-toggle" aria-label="Toggle dark mode">
+            <i class="fas fa-moon"></i>
+          </button>
+          <button
+            id="profile-icon-btn"
+            aria-label="User Profile"
+            title="User Profile"
+            class="profile-icon-btn"
+            style="margin-left: 1rem"
+          >
+            <i class="fas fa-user-alt"></i>
+          </button>
+          <button
+            class="nav-toggle"
+            aria-label="Toggle navigation"
+            aria-expanded="false"
+            aria-controls="primary-navigation"
+          >
+            <span class="hamburger"></span>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <header class="hero" role="banner">
+        <div class="container">
+            <h1>Welcome to TechBlog</h1>
+            <p>Your source for latest technology trends</p>
+        </div>
+    </header>
+
+    <main class="container" role="main">
+      <section
+        class="article-grid"
+        id="articleContainer"
+        aria-live="polite"
+        aria-label="Latest articles"
+      >
+        <!-- Articles loaded dynamically -->
+        <div class="loading-spinner" id="loadingSpinner"></div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>TechBlog</h3>
+            <p>Your source for technology insights and tutorials.</p>
+          </div>
+          <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="categories.html">Categories</a></li>
+              <li><a href="about.html">About</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h3>Connect</h3>
+            <div class="social-icons">
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-facebook"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="copyright">
+          <p>&copy; 2024 TechBlog. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script type="module" src="js/app.js"></script>
+  </body>
+</html>
+
+
+<!-- python backend/app.py
+Ctrl+c to stop the backend
+pip install python-dotenv
+pip install flask-cors   -->
